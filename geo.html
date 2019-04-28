@@ -1,0 +1,269 @@
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/wordcloud.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+
+<div class="containerr">
+	<div class="row">
+		<div class="col-sm-6 col-md-6">
+			<div id="container"></div>
+		</div>
+		<div class="col-sm-6 col-md-6">
+			<div id="container1"></div>
+		</div>
+		<div class="col-sm-6 col-md-6">
+			<div id="container2"></div>
+		</div>
+		<div class="col-sm-6 col-md-6">
+			<div id="container3"></div>
+		</div>
+		
+	</div>
+</div>
+
+
+<script type="text/javascript">
+
+	Highcharts.chart('container1', {
+
+	    title: {
+	        text: 'Solar Employment Growth by Sector, 2010-2016'
+	    },
+
+	    subtitle: {
+	        text: 'Source: thesolarfoundation.com'
+	    },
+
+	    yAxis: {
+	        title: {
+	            text: 'Number of Employees'
+	        }
+	    },
+	    legend: {
+	        layout: 'vertical',
+	        align: 'right',
+	        verticalAlign: 'middle'
+	    },
+
+	    plotOptions: {
+	        series: {
+	            label: {
+	                connectorAllowed: false
+	            },
+	            pointStart: 2010
+	        }
+	    },
+
+	    series: [{
+	        name: 'Installation',
+	        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+	    }, {
+	        name: 'Manufacturing',
+	        data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+	    }, {
+	        name: 'Sales & Distribution',
+	        data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+	    }, {
+	        name: 'Project Development',
+	        data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+	    }, {
+	        name: 'Other',
+	        data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+	    }],
+
+	    responsive: {
+	        rules: [{
+	            condition: {
+	                maxWidth: 500
+	            },
+	            chartOptions: {
+	                legend: {
+	                    layout: 'horizontal',
+	                    align: 'center',
+	                    verticalAlign: 'bottom'
+	                }
+	            }
+	        }]
+	    }
+
+	});
+
+
+	Highcharts.chart('container3', {
+	    chart: {
+	        type: 'column'
+	    },
+	    title: {
+	        text: 'Column chart with negative values'
+	    },
+	    xAxis: {
+	        categories: ['2019-01-01', '2019-01-02', '2019-01-03', '2019-01-04', '2019-01-05']
+	    },
+	    credits: {
+	        enabled: false
+	    },
+	    series: [{
+	        name: 'John',
+	        data: [5, 3, 4, 7, 2]
+	    }, {
+	        name: 'Jane',
+	        data: [2, -2, -3, 2, 1]
+	    }, {
+	        name: 'Joe',
+	        data: [3, 4, 4, -2, 5]
+	    }]
+	});
+
+	var text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum erat ac justo sollicitudin, quis lacinia ligula fringilla. Pellentesque hendrerit, nisi vitae posuere condimentum, lectus urna accumsan libero, rutrum commodo mi lacus pretium erat. Phasellus pretium ultrices mi sed semper. Praesent ut tristique magna. Donec nisl tellus, sagittis ut tempus sit amet, consectetur eget erat. Sed ornare gravida lacinia. Curabitur iaculis metus purus, eget pretium est laoreet ut. Quisque tristique augue ac eros malesuada, vitae facilisis mauris sollicitudin. Mauris ac molestie nulla, vitae facilisis quam. Curabitur placerat ornare sem, in mattis purus posuere eget. Praesent non condimentum odio. Nunc aliquet, odio nec auctor congue, sapien justo dictum massa, nec fermentum massa sapien non tellus. Praesent luctus eros et nunc pretium hendrerit. In consequat et eros nec interdum. Ut neque dui, maximus id elit ac, consequat pretium tellus. Nullam vel accumsan lorem.';
+	var lines = text.split(/[,\. ]+/g),
+	    data = Highcharts.reduce(lines, function (arr, word) {
+	        var obj = Highcharts.find(arr, function (obj) {
+	            return obj.name === word;
+	        });
+	        if (obj) {
+	            obj.weight += 1;
+	        } else {
+	            obj = {
+	                name: word,
+	                weight: 1
+	            };
+	            arr.push(obj);
+	        }
+	        return arr;
+	    }, []);
+
+	Highcharts.chart('container2', {
+	    series: [{
+	        type: 'wordcloud',
+	        data: data,
+	        name: 'Occurrences'
+	    }],
+	    title: {
+	        text: 'Wordcloud of Lorem Ipsum'
+	    }
+	});
+
+
+	
+	var H = Highcharts,
+	    map = H.maps['countries/us/us-all'],
+	    chart;
+
+	// Add series with state capital bubbles
+	$.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/us-capitals.json', function (json) {
+	    var data = [];
+	    $.each(json, function () {
+	        this.z = this.population;
+	        data.push(this);
+	    });
+
+	    chart = Highcharts.mapChart('container', {
+	        title: {
+	            text: 'Highmaps lat/lon demo'
+	        },
+
+	        tooltip: {
+	            pointFormat: '{point.capital}, {point.parentState}<br>' +
+	                'Lat: {point.lat}<br>' +
+	                'Lon: {point.lon}<br>' +
+	                'Population: {point.population}'
+	        },
+
+	        xAxis: {
+	            crosshair: {
+	                zIndex: 5,
+	                dashStyle: 'dot',
+	                snap: false,
+	                color: 'gray'
+	            }
+	        },
+
+	        yAxis: {
+	            crosshair: {
+	                zIndex: 5,
+	                dashStyle: 'dot',
+	                snap: false,
+	                color: 'gray'
+	            }
+	        },
+
+	        series: [{
+	            name: 'Basemap',
+	            mapData: map,
+	            borderColor: '#606060',
+	            nullColor: 'rgba(200, 200, 200, 0.2)',
+	            showInLegend: false
+	        }, {
+	            name: 'Separators',
+	            type: 'mapline',
+	            data: H.geojson(map, 'mapline'),
+	            color: '#101010',
+	            enableMouseTracking: false,
+	            showInLegend: false
+	        }, {
+	            type: 'mapbubble',
+	            dataLabels: {
+	                enabled: true,
+	                format: '{point.capital}'
+	            },
+	            name: 'Cities',
+	            data: data,
+	            maxSize: '12%',
+	            color: H.getOptions().colors[0]
+	        }]
+	    });
+	});
+
+	// Display custom label with lat/lon next to crosshairs
+	$('#container').mousemove(function (e) {
+	    var position;
+	    if (chart) {
+	        if (!chart.lab) {
+	            chart.lab = chart.renderer.text('', 0, 0)
+	                .attr({
+	                    zIndex: 5
+	                })
+	                .css({
+	                    color: '#505050'
+	                })
+	                .add();
+	        }
+
+	        e = chart.pointer.normalize(e);
+	        position = chart.fromPointToLatLon({
+	            x: chart.xAxis[0].toValue(e.chartX),
+	            y: chart.yAxis[0].toValue(e.chartY)
+	        });
+
+	        chart.lab.attr({
+	            x: e.chartX + 5,
+	            y: e.chartY - 22,
+	            text: 'Lat: ' + position.lat.toFixed(2) + '<br>Lon: ' + position.lon.toFixed(2)
+	        });
+	    }
+	});
+
+	$('#container').mouseout(function () {
+	    if (chart && chart.lab) {
+	        chart.lab.destroy();
+	        chart.lab = null;
+	    }
+	});
+
+</script>
